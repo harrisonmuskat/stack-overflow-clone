@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root "questions#index"
-  resources :questions, :answers
+  resources :questions do
+    resources :answers
+  end
 end

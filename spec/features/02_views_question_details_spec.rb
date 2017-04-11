@@ -4,12 +4,12 @@ require "pry"
 feature "views question details" do
   before(:each) do
     user = create(:user)
-    @question = create(:question, user: user)
+    @question = create(:question)
   end
 
   scenario "user clicks link and gets to question details" do
     visit questions_path
-    
+
     click_link(@question.title)
 
     expect(current_path).to eq(question_path(@question))
@@ -20,6 +20,5 @@ feature "views question details" do
 
     expect(page).to have_content(@question.title)
     expect(page).to have_content(@question.description)
-    expect(page).to have_content(@question.user.username)
   end
 end

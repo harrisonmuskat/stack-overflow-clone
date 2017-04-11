@@ -12,12 +12,10 @@ FactoryGirl.define do
   factory :question do
     title Faker::Lorem.characters(40)
     description Faker::Lorem.characters(150)
-    user
   end
 
   factory :answer do
     description Faker::Lorem.characters(50)
     question
-    user
   end
 end

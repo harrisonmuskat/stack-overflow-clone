@@ -16,7 +16,7 @@ feature "user posts a new question" do
     expect(current_path).to eq(new_question_path)
   end
 
-  scenario "user enters valid information in the form", pending: true do
+  scenario "user enters valid information in the form" do
     visit new_question_path
 
     fill_in('Title', with: valid_title)

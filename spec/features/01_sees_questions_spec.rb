@@ -5,7 +5,7 @@ feature "sees questions" do
   before(:each) do
     user = create(:user)
     2.times do
-      create(:question, user: user)
+      create(:question)
     end
   end
 
