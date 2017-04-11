@@ -1,15 +1,15 @@
 require 'pry'
 
 class AnswersController < ApplicationController
-  def index
-    @question = Question.find(params[:question_id])
-    @answers = @question.answers
-  end
-#
-  def new
-    @question = Question.find(params[:question_id])
-    @answer = Answer.new
-  end
+#   def index
+#     @question = Question.find(params[:question_id])
+#     @answers = @question.answers
+#   end
+# #
+#   def new
+#     @question = Question.find(params[:question_id])
+#     @answer = Answer.new
+#   end
 
   def create
     @question = Question.find(params[:question_id])
@@ -22,8 +22,6 @@ class AnswersController < ApplicationController
       flash[:notice] = @answer.errors.full_messages.to_sentence
       redirect_to question_path(@question)
     end
-
-
 
   end
 

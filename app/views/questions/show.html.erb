@@ -2,14 +2,14 @@
 <p>
   <%= @question.description %>
 </p>
-
 <%= render partial: "answer", collection: @answers %>
 
 <% if @errors %>
-<div>
-  <%= @errors.full_messages.to_sentence %>
-</div>
+  <div>
+    <%= @errors.full_messages.to_sentence %>
+  </div>
 <% end %>
+
 <%= form_for [@question, @answer] do |f| %>
 
   <%= f.label :description %>
