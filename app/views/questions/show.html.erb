@@ -2,6 +2,9 @@
 <p>
   <%= @question.description %>
 </p>
+
+<%= link_to "Edit Question", edit_question_path(@question) %>
+
 <%= render partial: "answer", collection: @answers %>
 
 <% if @errors %>

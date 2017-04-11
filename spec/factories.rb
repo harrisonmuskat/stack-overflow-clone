@@ -15,7 +15,9 @@ FactoryGirl.define do
   end
 
   factory :answer do
-    description Faker::Lorem.characters(50)
+    sequence :description do |n|
+      "#{Faker::Lorem.characters(50)}#{n}"
+    end
     question
   end
 end

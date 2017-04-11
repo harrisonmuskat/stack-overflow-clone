@@ -18,8 +18,9 @@ feature "views question details with answers" do
     expect(page).to have_content(@answer3.description)
   end
 
-  scenario "does not see answers for different questions", pending: true do
+  scenario "does not see answers for different questions" do
     visit question_path(@question)
+    # save_and_open_page
 
     expect(page).to_not have_content(@answer4.description)
   end
