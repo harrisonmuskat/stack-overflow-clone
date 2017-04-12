@@ -4,6 +4,7 @@
 </p>
 
 <%= link_to "Edit Question", edit_question_path(@question) %>
+<%= button_to "Delete Question", @question, method: :delete %>
 
 <%= render partial: "answer", collection: @answers %>
 
