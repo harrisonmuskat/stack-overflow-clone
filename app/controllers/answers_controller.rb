@@ -19,12 +19,7 @@ class AnswersController < ApplicationController
       flash[:alert] = @answer.errors.full_messages.to_sentence
       redirect_to question_answers_path(@question)
     end
-
   end
-  #
-  # def edit
-  #   @answer = Answer.find(params[:id])
-  # end
 
   def update
     @answer = Answer.find(params[:id])
