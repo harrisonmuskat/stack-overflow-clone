@@ -1,10 +1,4 @@
 <h1>Edit Your Question</h1>
 
-<% unless @question.errors.empty? %>
-  <div>
-    <%= @question.errors.full_messages.to_sentence %>
-  </div>
-<% end %>
-
-<%= button_to "Delete Question", @question, method: :delete %>
+<%= button_to "Delete Question", @question, method: :delete, class: 'alert button' %>
 <%= render "question_form" %>

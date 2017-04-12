@@ -1,25 +1,18 @@
-<h1> <%= @question.title %></h1>
+<h1 class='question_title' > <%= @question.title %></h1>
 <p>
   <%= @question.description %>
 </p>
 
-<%= link_to "Edit Question", edit_question_path(@question) %>
-<%= button_to "Delete Question", @question, method: :delete %>
+<%= button_to "Edit Question", edit_question_path(@question), method: :get, class: 'success button' %>
+<%= button_to "Delete Question", @question, method: :delete, class: 'alert button' %>
 
 <%= render partial: "answer", collection: @answers %>
 
-<% if @errors %>
-  <div>
-    <%= @errors.full_messages.to_sentence %>
-  </div>
-<% end %>
-
 <%= form_for [@question, @answer] do |f| %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, placeholder: "Your Answer Here" %>
+  <%= f.text_area :description, placeholder: "Your Answer Here", size: "20x6" %>
 
 
-  <%= f.submit "Post Answer" %>
+  <%= f.submit "Post Answer", class: 'button' %>
 
 <% end %>

@@ -1,7 +1,15 @@
-<h1>All Questions</h1>
+<div class='small-centered columns'>
+  <h1>All Questions</h1>
+</div>
 
 <% @questions.each do |question| %>
-<h3><%= link_to question.title, question_path(question) %></h3>
-<% end %>
 
-<%= button_to "New Question", new_question_path, method: :get %>
+<div class="column">
+   <div class="card">
+     <div class="card-section">
+       <h3><%= link_to question.title, question_path(question) %></h3>
+     </div>
+   </div>
+ </div>
+
+<% end %>

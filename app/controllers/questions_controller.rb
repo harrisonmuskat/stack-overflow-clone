@@ -19,8 +19,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
+      flash[:success] = "Question saved successfully."
       redirect_to @question
     else
+      flash[:alert] = @question.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -33,15 +35,18 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     if @question.update(question_params)
+      flash[:success] = "Question saved successfully."
       redirect_to @question
     else
+      flash[:alert] = @question.errors.full_messages.to_sentence
       render :edit
     end
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    Question.where(id: @question.id).destroy_all
+    # @question = Question.find(params[:id])
+    Question.where(id: params[:id]).destroy_all
+    redirect_to questions_path
   end
 
   private

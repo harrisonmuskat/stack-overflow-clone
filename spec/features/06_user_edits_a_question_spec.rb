@@ -13,7 +13,7 @@ feature "user edits a question" do
   scenario "user visits the edit question form" do
     visit question_path(@question)
 
-    click_link "Edit Question"
+    click_button "Edit Question"
 
     expect(current_path).to eq(edit_question_path(@question))
   end

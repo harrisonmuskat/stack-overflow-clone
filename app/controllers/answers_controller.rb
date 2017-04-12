@@ -16,10 +16,10 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.question = @question
     if @answer.save
-      flash[:notice] = "Answer saved correctly."
+      flash[:success] = "Answer saved correctly."
       redirect_to question_path(@question)
     else
-      flash[:notice] = @answer.errors.full_messages.to_sentence
+      flash[:alert] = @answer.errors.full_messages.to_sentence
       redirect_to question_path(@question)
     end
 

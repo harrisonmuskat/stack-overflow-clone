@@ -12,4 +12,18 @@
  *
  *= require_tree .
  *= require_self
+
  */
+
+h1 {
+  text-align: center;
+}
+
+.question_title {
+  text-align: left;
+  font-size: 2em;
+}
+
+form {
+  display: inline;
+}

@@ -14,7 +14,7 @@ feature "user answers a question" do
   scenario "user enters valid information in the form" do
     visit question_path(question.id)
 
-    fill_in('Description', with: valid_description)
+    fill_in('answer_description', with: valid_description)
 
     answer_list_length = Answer.count
 
@@ -28,7 +28,7 @@ feature "user answers a question" do
     scenario "user enters invalid description in the form" do
       visit question_path(question.id)
 
-      fill_in('Description', with: invalid_description)
+      fill_in('answer_description', with: invalid_description)
 
       click_button('Post Answer')
 
