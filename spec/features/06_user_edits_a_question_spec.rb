@@ -11,7 +11,7 @@ feature "user edits a question" do
   end
 
   scenario "user visits the edit question form" do
-    visit question_path(@question)
+    visit question_answers_path(@question)
 
     click_button "Edit Question"
 

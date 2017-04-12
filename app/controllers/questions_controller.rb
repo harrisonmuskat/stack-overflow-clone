@@ -5,12 +5,6 @@ class QuestionsController < ApplicationController
     @questions = Question.all.order(created_at: :desc)
   end
 
-  def show
-    @question = Question.find(params[:id])
-    @answers = Answer.where(question: @question).order(created_at: :desc)
-    @answer = Answer.new
-  end
-
   def new
     @question = Question.new
   end
@@ -20,7 +14,7 @@ class QuestionsController < ApplicationController
 
     if @question.save
       flash[:success] = "Question saved successfully."
-      redirect_to @question
+      redirect_to question_answers_path(@question)
     else
       flash[:alert] = @question.errors.full_messages.to_sentence
       render :new
@@ -36,7 +30,7 @@ class QuestionsController < ApplicationController
 
     if @question.update(question_params)
       flash[:success] = "Question saved successfully."
-      redirect_to @question
+      redirect_to question_answers_path(@question)
     else
       flash[:alert] = @question.errors.full_messages.to_sentence
       render :edit

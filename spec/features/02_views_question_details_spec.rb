@@ -12,11 +12,11 @@ feature "views question details" do
 
     click_link(@question.title)
 
-    expect(current_path).to eq(question_path(@question))
+    expect(current_path).to eq(question_answers_path(@question))
   end
 
   scenario "sees title and description of question" do
-    visit question_path(@question)
+    visit question_answers_path(@question)
 
     expect(page).to have_content(@question.title)
     expect(page).to have_content(@question.description)

@@ -6,13 +6,13 @@ feature "user answers a question" do
   let (:invalid_description) {Faker::Lorem.characters(30)}
 
   scenario "user visits the the question show page and sees answer form" do
-    visit question_path(question.id)
+    visit question_answers_path(question.id)
 
     expect(page).to have_field("answer_description", placeholder: "Your Answer Here")
   end
 
   scenario "user enters valid information in the form" do
-    visit question_path(question.id)
+    visit question_answers_path(question.id)
 
     fill_in('answer_description', with: valid_description)
 
@@ -26,7 +26,7 @@ feature "user answers a question" do
 
   context "invalid form submission" do
     scenario "user enters invalid description in the form" do
-      visit question_path(question.id)
+      visit question_answers_path(question.id)
 
       fill_in('answer_description', with: invalid_description)
 
@@ -35,7 +35,7 @@ feature "user answers a question" do
       expect(page).to have_content("Description is too short (minimum is 50 characters)")
     end
     scenario "user omits description in the form" do
-      visit question_path(question.id)
+      visit question_answers_path(question.id)
 
       click_button('Post Answer')
 

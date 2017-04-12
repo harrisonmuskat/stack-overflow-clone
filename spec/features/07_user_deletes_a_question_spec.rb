@@ -10,7 +10,7 @@ feature "user deletes a question" do
   end
 
   scenario "user visits the show question form" do
-    visit question_path(@question)
+    visit question_answers_path(@question)
 
     click_button "Delete Question"
 
@@ -28,7 +28,7 @@ feature "user deletes a question" do
   end
 
   scenario "all associated answers are also deleted when a question is deleted" do
-    visit question_path(@question)
+    visit question_answers_path(@question)
 
     click_button('Delete Question')
 
