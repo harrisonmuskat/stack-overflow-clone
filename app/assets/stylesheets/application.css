@@ -18,6 +18,10 @@
   margin-bottom: 30px;
 }
 
+.top-bar-right {
+  padding-top: 10px;
+}
+
 h1 {
   text-align: center;
 }

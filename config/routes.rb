@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   end
 
   resources :answers, only: [:update]
+  resources :users, only: [:new, :update, :destroy]
+
+  get "/auth/:provider/callback", to: "sessions#create"
+  
+  delete '/logout', to: 'sessions#destroy'
 end

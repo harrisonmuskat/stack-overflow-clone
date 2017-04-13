@@ -23,6 +23,16 @@
           <li>
             <%= button_to "New Question", new_question_path, method: :get, class: 'button' %>
           </li>
+          <li>
+            <% if current_user %>
+              <ul class="menu">
+                <li><%= "#{current_user.name}" %></li>
+                <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
+              </ul>
+            <% else %>
+              <%= link_to "Sign in with Github", "/auth/github" %>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
