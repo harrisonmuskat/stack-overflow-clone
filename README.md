@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Q&A App
 
-Things you may want to cover:
+This app allows users to post questions and answers, mark answers as 'best', and login with Github.
 
-* Ruby version
+### Details
 
-* System dependencies
+* Rails with PostgreSQL database
 
-* Configuration
+* Helpful gems: foundation-rails for CSS, redcarpet for markdown compatibility, and omniauth-github to handle user authentication.
 
-* Database creation
+### Setting up
 
-* Database initialization
+* Run bundle
 
-* How to run the test suite
+* Run rake:db create and rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+* To see the test files, run rake
 
-* Deployment instructions
-
-* ...
+* `Rails s` to start the server (localhost:3000)
